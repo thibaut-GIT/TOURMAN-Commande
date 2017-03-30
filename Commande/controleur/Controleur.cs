@@ -12,7 +12,7 @@ namespace GestionCommande.controleur
 
         void CreerCommande(Client client, ICollection<LigneCommande> ligneCmd);
 
-        void CreerClient (string nom, string prenom, string mail);
+        void CreerClient(string nom, string prenom, string mail);
 
         void CreerProduit(string designation, int prix);
 

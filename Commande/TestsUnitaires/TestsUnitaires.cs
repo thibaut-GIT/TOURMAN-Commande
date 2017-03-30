@@ -21,11 +21,11 @@ namespace GestionCommande.TestsUnitaires
         {
             Controleur ctrl = new CommandeControleur();
 
-            ctrl.CreerClient("Peter", "Parker", "spiderman@marvel.com");
+            ctrl.CreerClient("Wilson", "Wade", "deadpool@marvel.com");
 
-            Assert.AreEqual("Parker", ctrl.GetClients().Last().Nom);
-            Assert.AreEqual("Peter", ctrl.GetClients().Last().Prenom);
-            Assert.AreEqual("spiderman@marvel.com", ctrl.GetClients().Last().Mail);
+            Assert.AreEqual("Wilson", ctrl.GetClients().Last().Nom);
+            Assert.AreEqual("Wade", ctrl.GetClients().Last().Prenom);
+            Assert.AreEqual("deadpool@marvel.com", ctrl.GetClients().Last().Mail);
         }
 
         [TestMethod]
@@ -33,9 +33,9 @@ namespace GestionCommande.TestsUnitaires
         {
             Controleur ctrl = new CommandeControleur();
 
-            ctrl.CreerProduit("Lance-toile", 20);
+            ctrl.CreerProduit("Chimichangas", 20);
 
-            Assert.AreEqual("Lance-toile", ctrl.GetProduits().Last().Designation);
+            Assert.AreEqual("Chimichanga", ctrl.GetProduits().Last().Designation);
             Assert.AreEqual(20, ctrl.GetProduits().Last().Prix);
         }
 
@@ -44,8 +44,8 @@ namespace GestionCommande.TestsUnitaires
         {
             Controleur ctrl = new CommandeControleur();
 
-            ctrl.CreerClient("Peter", "Parker", "spiderman@marvel.com");
-            ctrl.CreerProduit("Lance-toile", 20);
+            ctrl.CreerClient("Wilson", "Wade", "deadpool@marvel.com");
+            ctrl.CreerProduit("Chimichanga", 20);
 
             List<LigneCommande> lgCmd = new List<LigneCommande>();
             lgCmd.Add(new LigneCommande() { Produit = ctrl.GetProduits().Last(), Quantite = 1 });
